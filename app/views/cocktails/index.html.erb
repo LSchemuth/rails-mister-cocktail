@@ -1,0 +1,25 @@
+<div class="container pad20">
+  <!-- Heading -->
+  <h1 class="text-underline text-brand">Harrods Bar</h1>
+
+    <!-- Grid row -->
+  <div class="row">
+    <!-- Card -->
+    <% @cocktails.each do |cocktail| %>
+      <div class="card m-4" style="width: 18rem;" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)">
+        <img src="<%= cocktail.image_url %>"class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title"> <%= cocktail.name %></h5>
+          <p class="card-text"><% Text %></p>
+          <%= link_to "See recipe", cocktail_path(cocktail), class: "card-link" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="pad10">
+    <%= link_to "Add your cocktail", new_cocktail_path, class: "btn btn-primary pad20" %>
+  </div>
+
+<!-- Close main div -->
+</div>
